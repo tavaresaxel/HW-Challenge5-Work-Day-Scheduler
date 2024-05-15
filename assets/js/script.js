@@ -23,8 +23,10 @@ $(function () {
     else{
       textarea.addClass("future")
     }
+    var value = localStorage.getItem("hour-" +i)
+    textarea.val(value)
   }
-
+  
   var saveBtnEl = $(".saveBtn")
 
 function saveEvent(event){
