@@ -4,9 +4,48 @@
 
 $(function () {
 
-  var currentDate = dayjs('dddd/MMMM/D')
+  var currentDate = dayjs()
+  var currentHour = dayjs().hour()
 
   var currentDayEl = $("#currentDay")
+
+  currentDayEl.text(currentDate.format('dddd, MMMM D'))
+
+  for (var i = 9; i < 18; i++){
+    var parentId = $("#hour-" +i)
+    var textarea = parentId.children('textarea')
+    if(i === currentHour){
+      textarea.addClass("present")
+    }
+    else if(i < currentHour){
+      textarea.addClass("past")
+    }
+    else{
+      textarea.addClass("future")
+    }
+  }
+
+  var saveBtnEl = $(".saveBtn")
+
+function saveEvent(event){
+  var textareaEl
+  var parentId 
+  if($(event.target).attr("class") === "fas fa-save"){
+    var iEl = $(event.target)
+    textareaEl = iEl.parent().siblings('textarea')
+    parentId = $(event.target).parent().parent().attr("id")
+  }
+  else{
+    var buttonEl = $(event.target)
+    textareaEl = buttonEl.siblings('textarea')
+    parentId = $(event.target).parent().attr("id")
+  }
+
+  localStorage.setItem(parentId , textareaEl.val())
+  
+}
+
+  saveBtnEl.on("click", saveEvent)
 
 
 
