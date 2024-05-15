@@ -4,8 +4,10 @@
 
 $(function () {
 
+  var currentDate = dayjs('dddd/MMMM/D')
+
   var currentDayEl = $("#currentDay")
-  
+
 
 
   // TODO: Add a listener for click events on the save button. This code should
