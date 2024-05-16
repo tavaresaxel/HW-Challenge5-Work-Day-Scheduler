@@ -15,7 +15,7 @@ This is a website that helps people with keeping track of their busy life. Helps
 
 ## Installation
 
-To use the website please download the repository from my Github, the link will be at the bottom of the read me. After that just run html file on preferred browser.
+To use the website please visit: https://tavaresaxel.github.io/HW-Challenge5-Work-Day-Scheduler/
 
 ## Usage
 
